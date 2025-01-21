@@ -10,15 +10,15 @@ import { gridSpacing } from 'store/constant';
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
 const Dashboard = () => {
-    return (
-        <Grid container spacing={gridSpacing}>
-            <Grid item xs={12}>
-                <MainCard title="Growth Assessment Chart">
-                    <FullFeaturedCrudGrid />
-                </MainCard>
-            </Grid>
-        </Grid>
-    );
+  return (
+    <Grid container spacing={gridSpacing}>
+      <Grid item xs={12}>
+        <MainCard title="Growth Assessment Chart">
+          <FullFeaturedCrudGrid />
+        </MainCard>
+      </Grid>
+    </Grid>
+  );
 };
 
 export default Dashboard;

@@ -23,8 +23,8 @@ function EditToolbar(props) {
   const handleClick = () => {
     const id = randomId();
     setRows((oldRows) => [
-      ...oldRows,
-      { id, type: '', category: '', attribute: '', detail: '', selfRating: '', mentorRating: '', isNew: true }
+      { id, type: '', category: '', attribute: '', detail: '', selfRating: '', mentorRating: '', isNew: true },
+      ...oldRows
     ]);
     setRowModesModel((oldModel) => ({
       ...oldModel,
