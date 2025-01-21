@@ -8,7 +8,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import { GridRowModes, DataGrid, GridToolbarContainer, GridActionsCellItem, GridRowEditStopReasons } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
-import { initialRows } from './initialRows';
+import { initialRows } from './growthAssessmentChartData';
 
 import PropTypes from 'prop-types';
 
@@ -116,7 +116,7 @@ export default function FullFeaturedCrudGrid() {
     {
       field: 'mentorRating',
       headerName: 'Mentor Rating',
-      width: 180,
+      width: 220,
       editable: true,
       type: 'singleSelect',
       valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
