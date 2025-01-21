@@ -102,7 +102,7 @@ export default function FullFeaturedCrudGrid() {
     {
       field: 'detail',
       headerName: 'Detail',
-      width: 700,
+      width: 500,
       editable: false
     },
     {
@@ -170,7 +170,7 @@ export default function FullFeaturedCrudGrid() {
   return (
     <Box
       sx={{
-        height: 500,
+        height: 700,
         width: '100%',
         '& .actions': {
           color: 'text.secondary'
