@@ -116,7 +116,7 @@ export default function FullFeaturedCrudGrid() {
     {
       field: 'mentorRating',
       headerName: 'Mentor Rating',
-      width: 220,
+      width: 180,
       editable: true,
       type: 'singleSelect',
       valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
@@ -125,7 +125,7 @@ export default function FullFeaturedCrudGrid() {
       field: 'actions',
       type: 'actions',
       headerName: 'Actions',
-      width: 100,
+      width: 180,
       cellClassName: 'actions',
       getActions: ({ id }) => {
         const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
