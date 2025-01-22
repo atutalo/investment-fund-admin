@@ -33,6 +33,7 @@ import MainCard from 'ui-component/cards/MainCard';
 import Transitions from 'ui-component/extended/Transitions';
 import UpgradePlanCard from './UpgradePlanCard';
 import User1 from 'assets/images/users/user-round.svg';
+import { signOut } from 'firebase/auth';
 
 // assets
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons-react';
@@ -57,7 +58,13 @@ const ProfileSection = () => {
      * */
     const anchorRef = useRef(null);
     const handleLogout = async () => {
-        console.log('Logout');
+        try {
+            await signOut(auth);
+            console.log('Logout successful');
+            navigate('/pages/login/login3'); // Redirect to sign-in page
+        } catch (error) {
+            console.error('Logout error:', error);
+        }
     };
 
     const handleClose = (event) => {
