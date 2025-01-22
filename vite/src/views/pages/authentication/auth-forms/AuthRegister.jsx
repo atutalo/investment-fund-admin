@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // material-ui
@@ -27,7 +27,6 @@ import { Formik } from 'formik';
 // project imports
 import Google from 'assets/images/icons/social-google.svg';
 import AnimateButton from 'ui-component/extended/AnimateButton';
-import { auth } from '../../../../firebaseConfig';
 import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
@@ -35,6 +34,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 // Firebase imports
+import { auth } from 'firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const AuthRegister = ({ ...others }) => {
@@ -43,6 +43,7 @@ const AuthRegister = ({ ...others }) => {
   const customization = useSelector((state) => state.customization);
   const [showPassword, setShowPassword] = useState(false);
   const [checked, setChecked] = useState(true);
+  const navigate = useNavigate();
 
   const [strength, setStrength] = useState(0);
   const [level, setLevel] = useState();
@@ -52,6 +53,7 @@ const AuthRegister = ({ ...others }) => {
     try {
       await signInWithPopup(auth, provider);
       // Handle successful registration
+      navigate('/pages/login/login3'); // Navigate to login page
     } catch (error) {
       console.error('Google registration error:', error);
     }
@@ -81,6 +83,7 @@ const AuthRegister = ({ ...others }) => {
       // Handle successful registration
       setStatus({ success: true });
       setSubmitting(false);
+      navigate('/pages/login/login3'); // Navigate to login page
     } catch (error) {
       console.error('Email registration error:', error);
       setStatus({ success: false });

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -42,12 +43,14 @@ const AuthLogin = ({ ...others }) => {
   const customization = useSelector((state) => state.customization);
   const [checked, setChecked] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const googleHandler = async () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
       // Handle successful login
+      navigate('/'); // Navigate to homepage
     } catch (error) {
       console.error('Google login error:', error);
     }
@@ -67,6 +70,7 @@ const AuthLogin = ({ ...others }) => {
       // Handle successful login
       setStatus({ success: true });
       setSubmitting(false);
+      navigate('/'); // Navigate to homepage
     } catch (error) {
       console.error('Email login error:', error);
       setStatus({ success: false });
