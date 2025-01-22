@@ -1,4 +1,3 @@
-// filepath: /Users/amanda.tutalo/dev/workRepos/investment-fund-admin/vite/src/views/pages/authentication/auth-forms/AuthRegister.jsx
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -28,6 +27,7 @@ import { Formik } from 'formik';
 // project imports
 import Google from 'assets/images/icons/social-google.svg';
 import AnimateButton from 'ui-component/extended/AnimateButton';
+import { auth } from '../../../../firebaseConfig';
 import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
@@ -35,7 +35,6 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 // Firebase imports
-import { auth } from 'firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const AuthRegister = ({ ...others }) => {

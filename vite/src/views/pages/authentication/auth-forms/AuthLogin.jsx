@@ -33,7 +33,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Google from 'assets/images/icons/social-google.svg';
 
 // Firebase imports
-import { auth } from 'firebaseConfig';
+import { auth } from '../../../../firebaseConfig';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const AuthLogin = ({ ...others }) => {
