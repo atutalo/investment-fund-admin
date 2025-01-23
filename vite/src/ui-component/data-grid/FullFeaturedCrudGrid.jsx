@@ -7,10 +7,10 @@ import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import { GridRowModes, DataGrid, GridToolbarContainer, GridActionsCellItem, GridRowEditStopReasons } from '@mui/x-data-grid';
-import { randomId } from '@mui/x-data-grid-generator';
-import { initialRows } from './growthAssessmentChartData';
-
+import growthTraitService from '../../services/growthTraitService.js';
 import PropTypes from 'prop-types';
+import {doc, updateDoc} from "firebase/firestore";
+import {db} from "../../firebaseConfig.js";
 
 function EditToolbar(props) {
     const { setRows, setRowModesModel } = props;
@@ -20,18 +20,20 @@ function EditToolbar(props) {
         setRowModesModel: PropTypes.func.isRequired
     };
 
-    const handleClick = () => {
-        const id = randomId();
-        setRows((oldRows) => [
-            { id, type: '', category: '', attribute: '', detail: '', selfRating: '', mentorRating: '', isNew: true },
-            ...oldRows
-        ]);
-        setRowModesModel((oldModel) => ({
-            ...oldModel,
-            [id]: { mode: GridRowModes.Edit, fieldToFocus: 'detail' }
-        }));
+    const handleClick = async () => {
+        const newRow = { type: '', category: '', attribute: '', detail: '', isNew: true };
+        try {
+            const addedRow = await growthTraitService.addGrowthAssessmentTrait(newRow);
+            setRows((oldRows) => [{ id: addedRow.id, ...newRow }, ...oldRows]);
+            setRowModesModel((oldModel) => ({
+                ...oldModel,
+                [addedRow.id]: { mode: GridRowModes.Edit, fieldToFocus: 'detail' }
+            }));
+        } catch (error) {
+            console.error('Error adding growth assessment trait:', error);
+        }
     };
-
+    
     return (
         <GridToolbarContainer>
             <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
@@ -42,8 +44,22 @@ function EditToolbar(props) {
 }
 
 export default function FullFeaturedCrudGrid() {
-    const [rows, setRows] = React.useState(initialRows);
+    const [rows, setRows] = React.useState([]);
     const [rowModesModel, setRowModesModel] = React.useState({});
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await growthTraitService.getGrowthAssessmentTraits();
+                setRows(data);
+            } catch (error) {
+                console.error('Error fetching growth assessment traits:', error);
+            }
+        };
+        fetchData().then(r => 
+            console.log('Data fetched')
+        );
+    }, []);
 
     const handleRowEditStop = (params, event) => {
         if (params.reason === GridRowEditStopReasons.rowFocusOut) {
@@ -55,14 +71,20 @@ export default function FullFeaturedCrudGrid() {
         setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
     };
 
-    const handleSaveClick = (id) => () => {
+    const handleSaveClick = (id) => async () => {
+        const rowToUpdate = rows.find((row) => row.id === id);
+        await updateDoc(doc(db, 'growthAssessmentTraits', id), rowToUpdate);
         setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
     };
 
-    const handleDeleteClick = (id) => () => {
-        setRows(rows.filter((row) => row.id !== id));
+    const handleDeleteClick = (id) => async () => {
+        try {
+            await growthTraitService.deleteGrowthAssessmentTrait(id);
+            setRows(rows.filter((row) => row.id !== id));
+        } catch (error) {
+            console.error('Error deleting growth assessment trait:', error);
+        }
     };
-
     const handleCancelClick = (id) => () => {
         setRowModesModel({
             ...rowModesModel,
@@ -75,12 +97,12 @@ export default function FullFeaturedCrudGrid() {
         }
     };
 
-    const processRowUpdate = (newRow) => {
+    const processRowUpdate = async (newRow) => {
         const updatedRow = { ...newRow, isNew: false };
+        await growthTraitService.updateGrowthAssessmentTrait(newRow.id, updatedRow);
         setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
         return updatedRow;
     };
-
     const handleRowModesModelChange = (newRowModesModel) => {
         setRowModesModel(newRowModesModel);
     };
@@ -91,19 +113,19 @@ export default function FullFeaturedCrudGrid() {
             field: 'category',
             headerName: 'Category',
             width: 180,
-            editable: false
+            editable: true
         },
         {
             field: 'attribute',
             headerName: 'Attribute',
             width: 180,
-            editable: false
+            editable: true
         },
         {
             field: 'detail',
             headerName: 'Detail',
             width: 500,
-            editable: false
+            editable: true
         },
         {
             field: 'selfRating',

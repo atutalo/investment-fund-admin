@@ -33,6 +33,7 @@ import { strengthColor, strengthIndicator } from 'utils/password-strength';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+import { addUser } from '../../../../services/userService';
 // Firebase imports
 import { auth } from 'firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth';
@@ -84,6 +85,14 @@ const AuthRegister = ({ ...others }) => {
             await updateProfile(user, {
                 displayName: `${values.firstName} ${values.lastName}`
             });
+
+            // Add user to Firestore
+            await addUser(user.uid, {
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email
+            });
+
             // Handle successful registration
             setStatus({ success: true });
             setSubmitting(false);
