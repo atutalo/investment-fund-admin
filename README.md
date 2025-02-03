@@ -5,12 +5,12 @@ To run the app and seed the database with initial growth trait data, follow thes
    cd vite
    ```
 
-2. **Run the app**:
+2. **Run the mock JSON server**:
    ```sh
-   yarn start
+   yarn mock-json:server
    ```
 
-3. **Seed the database with initial growth trait data**:
+3. **Run the app**:
    ```sh
-   node src/seedData.js
+   yarn start
    ```
