@@ -1,0 +1,357 @@
+{
+  "growthTraits": [
+    {
+      "type": "Soft",
+      "category": "Attitude",
+      "attribute": "Approachable",
+      "detail": "Available and patient with non-technical peers/stakeholders",
+      "id": "d470",
+      "selfRating": "Emerging",
+      "mentorRating": "Practicing",
+      "isNew": false
+    },
+    {
+      "type": "Soft",
+      "category": "Attitude",
+      "attribute": "Approachable",
+      "detail": "Available and patient with technical peers/stakeholders",
+      "id": "319d"
+    },
+    {
+      "type": "Soft",
+      "category": "Attitude",
+      "attribute": "Coachable",
+      "detail": "Makes changes based on feedback",
+      "id": "f2eb"
+    },
+    {
+      "type": "Soft",
+      "category": "Attitude",
+      "attribute": "Resilient",
+      "detail": "Handles roadblocks with care and sensitivity",
+      "id": "f75c"
+    },
+    {
+      "type": "Soft",
+      "category": "Attitude",
+      "attribute": "Resilient",
+      "detail": "Values the expertise of others (Listen and modify behavior)",
+      "id": "fb82"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Clear",
+      "detail": "Communicates in the correct manner and setting (Does it need to be said? Does it need to be said by me? Does it need to be said right now?)",
+      "id": "5ad4"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Confident",
+      "detail": "Express disagreement within a healthy conflict framework",
+      "id": "5dd3"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Confident",
+      "detail": "Can be comfortable speaking in front of 'large groups'",
+      "id": "a8f0"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Empathetic",
+      "detail": "Handles various personalities with care and sensitivity",
+      "id": "2d80"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Empathetic",
+      "detail": "Can communicate trade-off decisions to both technical and non-technical stakeholders. Renegotiate Commitment (Not necessarily always speaking in the language of business)",
+      "id": "e6d9"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Empathetic",
+      "detail": "Can speak in the language of other disciplines",
+      "id": "1536"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Empathetic",
+      "detail": "Empathize with opposing viewpoints",
+      "id": "68c2"
+    },
+    {
+      "type": "Soft",
+      "category": "Communication",
+      "attribute": "Empathetic",
+      "detail": "Demonstrates the ability to mine for conflict",
+      "id": "86a8"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Proactive",
+      "detail": "Pulls ideas out of others",
+      "id": "a2a1"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Proactive",
+      "detail": "Understands where the business is going and is bringing innovation to the conversation before the business is asking for it",
+      "id": "50a7"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Resourceful",
+      "detail": "Heart of a teacher (Can lead someone to a decision without telling them the decision)",
+      "id": "42fd"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Resourceful",
+      "detail": "Can challenge principles at all levels within personal discipline",
+      "id": "97ef"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Resourceful",
+      "detail": "Elevation of problem, co-authoring of the solution for issues",
+      "id": "f34d"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Strategic",
+      "detail": "Customer focused mindset",
+      "id": "4f0f"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Strategic",
+      "detail": "Considering technical impact [Feasibility]",
+      "id": "c178"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Strategic",
+      "detail": "Considering customer value [Fidelity, Value]",
+      "id": "5fe2"
+    },
+    {
+      "type": "Soft",
+      "category": "Execution",
+      "attribute": "Strategic",
+      "detail": "Considering business value [Viability]",
+      "id": "d85e"
+    },
+    {
+      "type": "Soft",
+      "category": "Maturity",
+      "attribute": "Emotional IQ",
+      "detail": "Have strong opinions, loosely held",
+      "id": "aa8e"
+    },
+    {
+      "type": "Soft",
+      "category": "Maturity",
+      "attribute": "Emotional IQ",
+      "detail": "Demonstrates emotional courage",
+      "id": "fe91"
+    },
+    {
+      "type": "Soft",
+      "category": "Maturity",
+      "attribute": "Personal Brand",
+      "detail": "Actively develops personal brand",
+      "id": "65a9"
+    },
+    {
+      "type": "Soft",
+      "category": "Maturity",
+      "attribute": "Personal Brand",
+      "detail": "Missional",
+      "id": "4e96"
+    },
+    {
+      "type": "Soft",
+      "category": "Maturity",
+      "attribute": "Poised",
+      "detail": "Demonstrates the ability to disagree and commit",
+      "id": "ff5d"
+    },
+    {
+      "type": "Soft",
+      "category": "Maturity",
+      "attribute": "Poised",
+      "detail": "Takes personal responsibility",
+      "id": "2c74"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Accessibility",
+      "detail": "Engages Socially within the Team",
+      "id": "212f"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Accessibility",
+      "detail": "Connects with those seeking help within a reasonable timeframe",
+      "id": "8446"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Relationship",
+      "detail": "Can market an idea within your squad",
+      "id": "ad74"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Relationship",
+      "detail": "Can market an idea across multiple squads",
+      "id": "44fe"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Relationship",
+      "detail": "Actively building trust with team",
+      "id": "5691"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Relationship",
+      "detail": "Actively building trust with other disciplines",
+      "id": "9a5b"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Relationship",
+      "detail": "Actively building trust with business leadership",
+      "id": "67d0"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Shared Urgency",
+      "detail": "Can work in concurrency",
+      "id": "a0a7"
+    },
+    {
+      "type": "Soft",
+      "category": "Partnering",
+      "attribute": "Shared Urgency",
+      "detail": "Wins and loses as a team",
+      "id": "4a6f"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Baseline skill in coding (Engineer can effectively build, run and debug locally in a language)",
+      "id": "ced0"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Foundational (Working) competence in a language",
+      "id": "8f50"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Comfortable and fluent working in the entire technology stack",
+      "id": "53e0"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Confident in making changes in an existing codebase/feature or other's code",
+      "id": "4059"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Confident to begin a green field codebase/feature (Knows how to start from new)",
+      "id": "2bba"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Deep understanding of primary language (Performance Concerns, Best Practices, Which to Choose and Why)",
+      "id": "13b6"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Defensive coding (Avoid problematic issues before they arise. Practice of eliminating assumptions in code.)",
+      "id": "5eac"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Self-improvement of craft based on patterns learned through mentorship, feedback or bugs",
+      "id": "0d86"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Zoom out to focus on high impact, multiplier code and design",
+      "id": "b8f3"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Evaluates upstream and downstream impact that unlocks company-wide business value",
+      "id": "03a0"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Able to communicate and articulate technical information to all levels of the discipline and company",
+      "id": "f9f5"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Ability to move between multiple squads to solve complex problems and influence growth of the team",
+      "id": "457d"
+    },
+    {
+      "type": "Hard",
+      "category": "Engineering Ability",
+      "attribute": "Core Engineering",
+      "detail": "Can easily switch context while remaining focused on outcomes",
+      "id": "7b7b"
+    }
+  ]
+}
