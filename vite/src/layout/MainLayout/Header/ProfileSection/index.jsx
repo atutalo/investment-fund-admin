@@ -39,8 +39,6 @@ import { signOut } from 'firebase/auth';
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons-react';
 
 // firebase
-import { auth } from '../../../../firebaseConfig';
-
 // ==============================|| PROFILE MENU ||============================== //
 
 const ProfileSection = () => {

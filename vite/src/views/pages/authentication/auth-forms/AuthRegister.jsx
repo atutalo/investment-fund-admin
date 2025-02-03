@@ -33,9 +33,7 @@ import { strengthColor, strengthIndicator } from 'utils/password-strength';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import { addUser } from '../../../../services/userService';
 // Firebase imports
-import { auth } from 'firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth';
 
 const AuthRegister = ({ ...others }) => {
