@@ -10,6 +10,7 @@ import { GridRowModes, DataGrid, GridToolbarContainer, GridActionsCellItem, Grid
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { MenuItem, Select } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 function EditToolbar(props) {
     const { setRows, setRowModesModel } = props;
@@ -52,8 +53,11 @@ function EditToolbar(props) {
 export default function FullFeaturedCrudGrid() {
     const [rows, setRows] = React.useState([]);
     const [rowModesModel, setRowModesModel] = React.useState({});
-    // TODO: Add ability to select level and filter rows based on level
     const [selectedLevel, setSelectedLevel] = useState('engineerTwo');
+
+    const handleLevelChange = (event) => {
+        setSelectedLevel(event.target.value);
+    };
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -264,6 +268,12 @@ export default function FullFeaturedCrudGrid() {
                 }
             }}
         >
+            <Typography>Select Engineering Level:</Typography>
+            <Select value={selectedLevel} onChange={handleLevelChange} variant="outlined">
+                <MenuItem value="engineerOne">Engineer 1</MenuItem>
+                <MenuItem value="engineerTwo">Engineer 2</MenuItem>
+                <MenuItem value="engineerThree">Engineer 3</MenuItem>
+            </Select>
             <DataGrid
                 rows={rows}
                 columns={columns}

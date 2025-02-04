@@ -11,7 +11,9 @@
       "leaderRating": "Unpracticed",
       "isNew": false,
       "requiredLevels": {
-        "engineerTwo": "Practicing"
+        "engineerOne": "Emerging",
+        "engineerTwo": "Practicing",
+        "engineerThree": "Radiating"
       }
     },
     {
@@ -25,7 +27,8 @@
       "leaderRating": "Unpracticed",
       "isNew": false,
       "requiredLevels": {
-        "engineerTwo": "Emerging"
+        "engineerOne": "Emerging",
+        "engineerTwo": "Practicing"
       }
     },
     {
