@@ -8,6 +8,8 @@ import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import { GridRowModes, DataGrid, GridToolbarContainer, GridActionsCellItem, GridRowEditStopReasons } from '@mui/x-data-grid';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { MenuItem, Select } from '@mui/material';
 
 function EditToolbar(props) {
     const { setRows, setRowModesModel } = props;
@@ -50,6 +52,8 @@ function EditToolbar(props) {
 export default function FullFeaturedCrudGrid() {
     const [rows, setRows] = React.useState([]);
     const [rowModesModel, setRowModesModel] = React.useState({});
+    // TODO: Add ability to select level and filter rows based on level
+    const [selectedLevel, setSelectedLevel] = useState('engineerTwo');
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -123,25 +127,25 @@ export default function FullFeaturedCrudGrid() {
         {
             field: 'category',
             headerName: 'Category',
-            width: 180,
+            width: 150,
             editable: true
         },
         {
             field: 'attribute',
             headerName: 'Attribute',
-            width: 180,
+            width: 150,
             editable: true
         },
         {
             field: 'detail',
             headerName: 'Detail',
-            width: 500,
+            width: 400,
             editable: true
         },
         {
             field: 'selfRating',
             headerName: 'Self Rating',
-            width: 220,
+            width: 175,
             editable: true,
             type: 'singleSelect',
             valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
@@ -149,7 +153,7 @@ export default function FullFeaturedCrudGrid() {
         {
             field: 'mentorRating',
             headerName: 'Mentor Rating',
-            width: 220,
+            width: 175,
             editable: true,
             type: 'singleSelect',
             valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
@@ -157,10 +161,43 @@ export default function FullFeaturedCrudGrid() {
         {
             field: 'leaderRating',
             headerName: 'Leader Rating',
-            width: 220,
+            width: 175,
             editable: true,
             type: 'singleSelect',
             valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
+        },
+        {
+            field: 'requiredLevels',
+            headerName: 'Required Levels',
+            width: 175,
+            editable: true,
+            type: 'singleSelect',
+            valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating'],
+            renderCell: (params) => {
+                const requiredLevels = params.row.requiredLevels || {};
+                return <div>{requiredLevels[selectedLevel]}</div>;
+            },
+            renderEditCell: (params) => {
+                console.log(params);
+                const requiredLevels = params.row.requiredLevels || {};
+                const handleChange = (event) => {
+                    const newValue = event.target.value;
+                    params.api.setEditCellValue({
+                        id: params.id,
+                        field: params.field,
+                        value: { ...requiredLevels, [selectedLevel]: newValue }
+                    });
+                };
+                return (
+                    <Select value={requiredLevels[selectedLevel] || ''} onChange={handleChange} variant="outlined" fullWidth={true}>
+                        <MenuItem value="Unpracticed">Unpracticed</MenuItem>
+                        <MenuItem value="Emerging">Emerging</MenuItem>
+                        <MenuItem value="Practicing">Practicing</MenuItem>
+                        <MenuItem value="Consistent">Consistent</MenuItem>
+                        <MenuItem value="Radiating">Radiating</MenuItem>
+                    </Select>
+                );
+            }
         },
         {
             field: 'actions',

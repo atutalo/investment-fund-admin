@@ -6,10 +6,13 @@
       "attribute": "Approachable",
       "detail": "Available and patient with non-technical peers/stakeholders",
       "id": "d470",
-      "selfRating": "Practicing",
+      "selfRating": "Emerging",
       "mentorRating": "Emerging",
-      "leaderRating": "Emerging",
-      "isNew": false
+      "leaderRating": "Unpracticed",
+      "isNew": false,
+      "requiredLevels": {
+        "engineerTwo": "Practicing"
+      }
     },
     {
       "type": "Soft",
@@ -20,14 +23,24 @@
       "selfRating": "Unpracticed",
       "mentorRating": "Unpracticed",
       "leaderRating": "Unpracticed",
-      "isNew": false
+      "isNew": false,
+      "requiredLevels": {
+        "engineerTwo": "Emerging"
+      }
     },
     {
       "type": "Soft",
       "category": "Attitude",
       "attribute": "Coachable",
       "detail": "Makes changes based on feedback",
-      "id": "f2eb"
+      "id": "f2eb",
+      "requiredLevels": {
+        "engineerTwo": "Unpracticed"
+      },
+      "isNew": false,
+      "selfRating": "Unpracticed",
+      "mentorRating": "Unpracticed",
+      "leaderRating": "Unpracticed"
     },
     {
       "type": "Soft",
@@ -357,6 +370,14 @@
       "attribute": "Core Engineering",
       "detail": "Can easily switch context while remaining focused on outcomes",
       "id": "7b7b"
+    },
+    {
+      "id": "71b7",
+      "type": "",
+      "category": "",
+      "attribute": "",
+      "detail": "",
+      "isNew": true
     }
   ]
 }
