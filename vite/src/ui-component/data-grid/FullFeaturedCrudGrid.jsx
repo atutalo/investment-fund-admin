@@ -155,6 +155,14 @@ export default function FullFeaturedCrudGrid() {
             valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
         },
         {
+            field: 'leaderRating',
+            headerName: 'Leader Rating',
+            width: 220,
+            editable: true,
+            type: 'singleSelect',
+            valueOptions: ['Unpracticed', 'Emerging', 'Practicing', 'Consistent', 'Radiating']
+        },
+        {
             field: 'actions',
             type: 'actions',
             headerName: 'Actions',

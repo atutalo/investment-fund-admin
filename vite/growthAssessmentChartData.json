@@ -6,8 +6,9 @@
       "attribute": "Approachable",
       "detail": "Available and patient with non-technical peers/stakeholders",
       "id": "d470",
-      "selfRating": "Emerging",
-      "mentorRating": "Practicing",
+      "selfRating": "Practicing",
+      "mentorRating": "Emerging",
+      "leaderRating": "Emerging",
       "isNew": false
     },
     {
@@ -15,7 +16,11 @@
       "category": "Attitude",
       "attribute": "Approachable",
       "detail": "Available and patient with technical peers/stakeholders",
-      "id": "319d"
+      "id": "319d",
+      "selfRating": "Unpracticed",
+      "mentorRating": "Unpracticed",
+      "leaderRating": "Unpracticed",
+      "isNew": false
     },
     {
       "type": "Soft",
