@@ -127,7 +127,7 @@ export default function FullFeaturedCrudGrid() {
     };
 
     const columns = [
-        { field: 'type', headerName: 'Type', width: 100, editable: true },
+        { field: 'type', headerName: 'Type', width: 100, editable: true, type: 'singleSelect', valueOptions: ['Soft', 'Hard'] },
         {
             field: 'category',
             headerName: 'Category',
